@@ -5,3 +5,6 @@
  echo "this is the forth commit";
  echo "this is cnm";
  echo "this is cnm";
+ echo "this is nmc";
+ echo "this is ";
+
