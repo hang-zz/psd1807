@@ -4,3 +4,4 @@
  echo "this is the third commit";
  echo "this is the forth commit";
  echo "this is cnm";
+ echo "this is cnm";
