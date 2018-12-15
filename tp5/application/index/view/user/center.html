@@ -1,0 +1,46 @@
+      
+{{extend name="public/base"}}
+      {{block name="main"}}
+      <div class="col-md-8">
+          <!-- 用户中心 -->
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">用户中心</h3>
+              召唤师:<a href="">{{$Think.session.user.username}}</a>
+              已发表的博客
+              
+            </div>
+            <div class="panel-body" >
+              <table class="table table-bordered table-condensed table-hover table-striped">
+                <tr>
+                  <td>id</td>
+                  <td>UID</td>
+                  <td>标题</td>
+                  <td>创建时间</td>
+                  <td>操作菜单</td>
+                </tr> 
+                {{volist name="list" as id="vo"}}
+                <tr>
+                  <td>[{{$key}}]{{$vo.id}}</td>
+                  <td>{{$vo.uid}}</td>
+                  <td>{{$vo.title|mb_substr=0,15}}</td>
+                  <td>{{$vo.created}}</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-info">查看</a>
+                    <a href="#" class="btn btn-sm btn-success">编辑</a>
+                    <a href="#" class="btn btn-sm btn-danger">删除</a>
+                  </td>
+                </tr>
+                {{/volist}}
+              </table> 
+                {{$list->render()}}         
+            </div>
+          </div>
+          </div>
+          {{/*$vo->render()*/}}
+      {{/block}}
+      {{block name="right"}}
+      <div class="col-md-4">
+          <h1>右边</h1>
+      </div>
+      {{/block}}

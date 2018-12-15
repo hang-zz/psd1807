@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板引擎演示</title>
+</head>
+<body>
+	<h1>模板引擎演示</h1>
+	{{//注释内容,你看不见我}}
+	{{/* 我也是注释内容,你也看不见我*/}}
+	{{$hello}}<br>
+	用户名:{{$user['username']}}<br>
+	余额:{{$user.balance}}<br>
+	
+	手机号:{{$obj->phone}}<br>
+	邮箱:{{$obj->email}}<br>
+
+	时间戳:{{$user.created}}<br>
+	日期:{{$obj->created|date="Y-m-d H:i:s,###"}}<br>
+
+	小写转大写:{{$hello|strtoupper}}<br>
+	大写转小写:{{$hello|strtolower}}<br>
+	首字母大写:{{$hello|ucfirst}}<br>
+	截取:{{$hello|substr=0,5}}<br>{{$hello|substr=6,5}}<br>
+	标量输出的语法:
+	{{literal}}
+	hello,{{$hello}}
+	{{/literal}}
+	<h3>保留变量</h3>
+	核心目录:{{$Think.CORE_Path}} <br>
+	预定义变量: <br>
+	获取GET信息:{{$Think.get.msg}} <br>
+	获取POST信息:{{$Think.post.msg}} <br>
+	获取配置信息:{{$Think.config.paginate.list_rows}} <br>
+	if语句:
+	{{if condition="$Think.config.app_debug"}}
+	调试模式已开启 
+	{{else /}}
+	调试模式没开启
+	{{/if}}
+	<br>
+	三目运算:{{$Think.config.app_debug ?"调试模式已开启":"调试模式没开启"}}
+
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

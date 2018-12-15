@@ -1,0 +1,30 @@
+{{extend name="public/base"}}
+{{block name="main"}}
+	<h1>用户列表</h1>
+	<a href="{{:url('index/index/index')}}">首页</a>
+	<table class="table table-bordered table-condensed table-hover">
+		<tr>
+			<td>id</td>
+			<td>用户名</td>
+			<td>余额</td>
+			<td>时间</td>
+			<td>操作菜单</td>
+		</tr>
+		{{volist name="list" as id="user"}}
+		
+		<tr {{if condition="$key%2"}} 
+		style="background-color:pink"{{/if}}>
+			<td>[{{$key}}]{{$user.id}} </td>
+			<td>{{$user.username}}</td>
+			<td>{{$user.balance}}</td>
+			<td>{{$user.created|date="Y-m-d H:i:s",###}}</td>
+			<td>
+				<a href="#" class="btn btn-info">查看</a>
+				<a href="#" class="btn btn-info">编辑</a>
+				<a href="#" class="btn btn-info">删除</a>
+			</td>
+		</tr>
+
+		{{/volist}}
+	</table>
+	{{/block}}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{{block name="title"}}{{/block}}</title>
+    {{load file="__STATIC__/bootstrap/css/bootstrap.css"}}
+    {{block name="css"}}{{/block}}
+  </head>
+  <body>
+
+    <div class="container">
+      {{include file="public/header"}}
+      
+      {{block name="left"}}{{/block}}
+      {{block name="main"}}{{/block}}
+      {{block name="right"}}{{/block}}
+
+      {{include file="public/footer"}}
+    </div>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    {{load file="__JS__/jquery-3.3.1.js"}}
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    {{load file="__STATIC__/bootstrap/js/bootstrap.js"}}
+    {{block name="js"}}{{/block}}
+  </body>
+</html>
